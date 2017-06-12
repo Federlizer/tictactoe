@@ -1,7 +1,7 @@
 cell_data = {
-	1: "X",
+	1: " ",
 	2: " ",
-	3: "O",
+	3: " ",
 	4: " ",
 	5: " ",
 	6: " ",
@@ -10,6 +10,7 @@ cell_data = {
 	9: " "
 }
 
+i = 0
 
 
 
@@ -24,10 +25,54 @@ def draw_grid():
 
 
 
-def check_cells():
-	pass
+def check_cells(number):
+	if (cell_data[number] == "X" or cell_data[number] == "O"):
+		return False
+	else:
+		return True
+	
 
-def something_that_changes_the_data_in_():
-	pass
 
-draw_grid()
+def change_data(number, player):
+	cell_data[number] = player
+
+
+
+
+
+while(True):
+	if(i % 2 == 0):
+		try:
+			chosen_cell = int(input("X choose: "))
+		except ValueError:
+			print("Please type in a number!")	
+			continue
+
+		if(chosen_cell < 1 or chosen_cell > 9):
+			print("Please type in a number between 1 and 9")
+			continue
+
+		if(check_cells(chosen_cell)):
+			change_data(chosen_cell, "X")
+		else:
+			print("This slot has already been used, please try another one")	
+			continue
+		
+
+	elif(not(i % 2 == 0)):
+		try:
+			chosen_cell = int(input("O choose: "))
+		except ValueError:
+			print("Please type in a number!")
+			continue
+
+		if(chosen_cell < 1 or chosen_cell > 9):
+			print("Please type in a number between 1 and 9")
+			continue
+
+		if(check_cells(chosen_cell)):
+			change_data(chosen_cell, "O")
+		else:
+			print("This slot has already been used, please try another one")
+
+	i += 1
