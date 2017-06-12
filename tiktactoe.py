@@ -34,17 +34,40 @@ def check_winner():
 	if(cell_data[1] == cell_data[2] == cell_data[3] and cell_data[1] != ' '):
 		print(cell_data[1] + " has won the game!")
 		playing = False
+	elif(cell_data[4] == cell_data[5] == cell_data[6] and cell_data[4] != ' '):
+		print(cell_data[4] + " has won the game!")
+		playing = False
+	elif(cell_data[7] == cell_data[8] == cell_data[9] and cell_data[7] != ' '):
+		print(cell_data[7] + " has won the game!")
+		playing = False
+	elif(cell_data[1] == cell_data[4] == cell_data[7] and cell_data[1] != ' '):
+		print(cell_data[1] + " has won the game!")
+		playing = False
+	elif(cell_data[2] == cell_data[5] == cell_data[8] and cell_data[2] != ' '):
+		print(cell_data[2] + " has won the game!")
+		playing = False
+	elif(cell_data[3] == cell_data[6] == cell_data[9] and cell_data[3] != ' '):
+		print(cell_data[3] + " has won the game!")
+		playing = False
+	elif(cell_data[1] == cell_data[5] == cell_data[9] and cell_data[1] != ' '):
+		print(cell_data[1] + " has won the game!")
+		playing = False
+	elif(cell_data[3] == cell_data[5] == cell_data[7] and cell_data[3] != ' '):
+		print(cell_data[3] + " has won the game!")
+		playing = False
 
 
 draw_grid()
 
 while(playing):
-	print(playing)
+	if(i == 9):
+		print("The game is a tie")
+		break
 	if(i % 2 == 0):
 		try:
 			chosen_cell = int(input("X choose: "))
 		except ValueError:
-			print("Please type in a number!")	
+			print("Please type in a natural integer!")	
 			continue
 
 		if(chosen_cell < 1 or chosen_cell > 9):
@@ -64,7 +87,7 @@ while(playing):
 		try:
 			chosen_cell = int(input("O choose: "))
 		except ValueError:
-			print("Please type in a number!")
+			print("Please type in a natural integer!")
 			continue
 
 		if(chosen_cell < 1 or chosen_cell > 9):
@@ -79,3 +102,5 @@ while(playing):
 			continue
 
 	i += 1
+
+input()
