@@ -11,7 +11,7 @@ cell_data = {
 }
 
 i = 0
-
+playing = True
 
 
 def draw_grid():
@@ -30,11 +30,16 @@ def check_cells(number, player):
 		return True
 	
 def check_winner():
-	print("checked winner")
+	global playing
+	if(cell_data[1] == cell_data[2] == cell_data[3] and cell_data[1] != ' '):
+		print(cell_data[1] + " has won the game!")
+		playing = False
 
 
 draw_grid()
-while(True):
+
+while(playing):
+	print(playing)
 	if(i % 2 == 0):
 		try:
 			chosen_cell = int(input("X choose: "))
