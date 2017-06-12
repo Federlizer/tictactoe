@@ -14,15 +14,15 @@ cell_data = {
 
 
 def draw_grid():
-	for x in cell_data.keys():
-		print(x)	
-	
 	border = "+---+---+---+\n"
-	cell_column_one = "| " + cell_data[1] + " | " + cell_data[2] + " " + template + cell_data[3] + " |\n"
+	row1 = "| " + cell_data[1] + " | " + cell_data[2] + " | " + cell_data[3] + " |\n"
+	row2 = "| " + cell_data[4] + " | " + cell_data[5] + " | " + cell_data[6] + " |\n"
+	row3 = "| " + cell_data[7] + " | " + cell_data[8] + " | " + cell_data[9] + " |\n"
+	print(border + row1 + border + row2 + border + row3 + border)
 
-	total = border + cell_column_one + border
 
-	print(total)
+
+
 
 def check_cells():
 	pass
