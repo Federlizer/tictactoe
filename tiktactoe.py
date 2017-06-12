@@ -19,27 +19,21 @@ def draw_grid():
 	row1 = "| " + cell_data[1] + " | " + cell_data[2] + " | " + cell_data[3] + " |\n"
 	row2 = "| " + cell_data[4] + " | " + cell_data[5] + " | " + cell_data[6] + " |\n"
 	row3 = "| " + cell_data[7] + " | " + cell_data[8] + " | " + cell_data[9] + " |\n"
+
 	print(border + row1 + border + row2 + border + row3 + border)
 
-
-
-
-
-def check_cells(number):
+def check_cells(number, player):
 	if (cell_data[number] == "X" or cell_data[number] == "O"):
 		return False
 	else:
+		cell_data[number] = player
 		return True
 	
+def check_winner():
+	print("checked winner")
 
 
-def change_data(number, player):
-	cell_data[number] = player
-
-
-
-
-
+draw_grid()
 while(True):
 	if(i % 2 == 0):
 		try:
@@ -52,12 +46,14 @@ while(True):
 			print("Please type in a number between 1 and 9")
 			continue
 
-		if(check_cells(chosen_cell)):
-			change_data(chosen_cell, "X")
+
+		if(check_cells(chosen_cell, "X")):
+			draw_grid()
+			check_winner()
 		else:
 			print("This slot has already been used, please try another one")	
 			continue
-		
+
 
 	elif(not(i % 2 == 0)):
 		try:
@@ -70,9 +66,11 @@ while(True):
 			print("Please type in a number between 1 and 9")
 			continue
 
-		if(check_cells(chosen_cell)):
-			change_data(chosen_cell, "O")
+		if(check_cells(chosen_cell, "O")):
+			draw_grid()
+			check_winner()
 		else:
 			print("This slot has already been used, please try another one")
+			continue
 
 	i += 1
