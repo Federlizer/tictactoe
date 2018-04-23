@@ -1,9 +1,4 @@
-###Test
+#tic-tac-toe
+A simple tic-tac-toe game, created for a project that my cousin had. 
 
-###Sequence diagram
-```seq
-Andrew->China: Says Hello 
-Note right of China: China thinks\nabout it 
-China-->Andrew: How are you? 
-Andrew->>China: I am good thanks!
-```
+Made with love
