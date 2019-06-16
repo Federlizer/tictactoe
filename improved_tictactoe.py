@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Change drawing here, not in the implementation!!!
 player_one = " X "
 player_two = " O "
